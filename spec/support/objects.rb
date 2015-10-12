@@ -26,7 +26,7 @@ module DummyApp
   class CommandResolver
     def resolve(command)
       handler_class(command).new
-    rescue NameError
+    rescue
       nil
     end
 
