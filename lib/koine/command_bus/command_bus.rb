@@ -1,7 +1,7 @@
 module Koine
   module CommandBus
     class CommandBus
-      class UnhandledCommandError < RuntimeError; end
+      UnhandledCommandError = Class.new(RuntimeError)
 
       attr_reader :resolvers
 
