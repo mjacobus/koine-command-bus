@@ -25,14 +25,13 @@ end
 module DummyApp
   class CommandResolver
     def resolve(command)
-      handler_class(command).new
-    rescue
-      nil
-    end
+      if command.is_a?(Command::Hello)
+        return CommandHandler::Hello.new
+      end
 
-    def handler_class(command)
-      klass = command.class.to_s.gsub("Command", "CommandHandler")
-      Object.const_get(klass)
+      if command.is_a?(Command::GoodBye)
+        return CommandHandler::GoodBye.new
+      end
     end
   end
 end
