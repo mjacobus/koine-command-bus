@@ -1,5 +1,23 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require "koine/command_bus"
 
+if ENV['COVERALLS']
+  require "coveralls"
+  Coveralls.wear!
+end
+
+if ENV['COVERAGE']
+  require "simplecov"
+
+  SimpleCov.start do
+    add_filter "/test/"
+  end
+end
+
+if ENV['SCRUTINIZER']
+  require "scrutinizer/ocular"
+  Scrutinizer::Ocular.watch!
+end
+
+require "koine/command_bus"
 require "minitest/autorun"
 require "support/objects.rb"
