@@ -79,7 +79,7 @@ end
 Append the resolver to the command bus
 
 ```ruby
-command_bus = Koine::CommandBus.new
+command_bus = Koine::CommandBus::CommandBus.new
 command_bus.resolvers << MyHandler.new
 
 command = App::Command::ClearDirectory.new('/tmp')
