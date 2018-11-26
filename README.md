@@ -3,10 +3,8 @@
 Command bus for ruby
 
 [![Build Status](https://travis-ci.org/mjacobus/koine-command-bus.svg)](https://travis-ci.org/mjacobus/koine-command-bus)
-[![Code Coverage](https://scrutinizer-ci.com/g/mjacobus/koine-command-bus/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mjacobus/koine-command-bus/?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/mjacobus/koine-command-bus/badge.svg?branch=master)](https://coveralls.io/github/mjacobus/koine-command-bus?branch=master)
 [![Code Climate](https://codeclimate.com/github/mjacobus/koine-command-bus/badges/gpa.svg)](https://codeclimate.com/github/mjacobus/koine-command-bus)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mjacobus/koine-command-bus/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mjacobus/koine-command-bus/?branch=master)
-[![Dependency Status](https://gemnasium.com/mjacobus/koine-command-bus.svg)](https://gemnasium.com/mjacobus/koine-command-bus)
 [![Gem Version](https://badge.fury.io/rb/koine-command_bus.svg)](https://badge.fury.io/rb/koine-command_bus)
 
 ## Installation
@@ -80,7 +78,7 @@ Append the resolver to the command bus
 
 ```ruby
 command_bus = Koine::CommandBus::CommandBus.new
-command_bus.resolvers << MyHandler.new
+command_bus.resolvers << MyCommandHandlerResolver.new
 
 command = App::Command::ClearDirectory.new('/tmp')
 command_bus.handle(command) # dir cleared!
