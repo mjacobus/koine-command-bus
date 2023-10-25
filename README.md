@@ -41,7 +41,7 @@ end
 ```ruby
 class App::CommandHandler::ClearDirectory
   def handle(command)
-    system("rm -rf command.dir/*")
+    system("rm -rf #{command.dir}/*")
   end
 end
 ```
